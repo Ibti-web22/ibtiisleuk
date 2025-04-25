@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Light background for better contrast */
+    color: #333; /* Darker text for readability */
+}
+header {
+    background: linear-gradient(to right, #333, #555); /* Gradient background */
+    color: #fff;
+    padding: 40px 0; /* Increased padding for a more spacious look */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+
+    @media (max-width: 768px) {
+        .photo-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+        }
+    
+        header h1 {
+            font-size: 2rem; /* Reduce header font size on smaller screens */
+        }
+    
+        section {
+            padding: 15px; /* Reduce padding for smaller screens */
+        }
+    }
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    will-change: opacity, transform; /* Performance optimization */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger font size for the title */
+}
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff; /* White background for content sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.contact {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0; /* Increased padding for better spacing */
+    font-size: 0.9rem; /* Slightly smaller text */
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+.contact a:hover {
+    color: #007BFF; /* Change to a blue color on hover */
+    text-decoration: underline;
+}
+* {
+    box-sizing: border-box;
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Space between images */
+    padding: 20px 0;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 700px; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+
+}
+.photo-grid img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Optional: Staggered animations for fade-in elements */
+.fade-in:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.fade-in:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.fade-in:nth-child(3) {
+    animation-delay: 0.6s;
+}
+nav {
+    background: #333; /* Dark gray background */
+    color: #fff; /* White text color */
+    padding: 10px 0; /* Add padding for spacing */
+    position: sticky; /* Make the navigation bar stick to the top */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display items in a row */
+    justify-content: center; /* Center the navigation items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Add spacing between items */
+}
+
+nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1rem; /* Adjust font size */
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Change to blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
